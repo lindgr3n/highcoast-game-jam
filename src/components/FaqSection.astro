@@ -1,0 +1,147 @@
+---
+const faqs = [
+  {
+    question: "When and where does the game jam take place?",
+    answer: "The game jam begins on Monday 4/12 and runs until Sunday 10/12.",
+  },
+  {
+    question: "How do i share my game?",
+    answer:
+      "Games for judging should be shared on your preferred platform, such as GitHub. You must provide a link to your game's repository and include a README with instructions for judges to test and evaluate your game.",
+  },
+  {
+    question: "Is there a specific theme for the game jam?",
+    answer:
+      "Yes, a theme will be announced at the start of the game jam. Participants are encouraged to create games based on or inspired by this theme.",
+  },
+  {
+    question: "Can I work on my game alone, or do I need a team?",
+    answer:
+      "You can participate as an individual developer or form a team, depending on your preference. Team sizes and collaboration are up to you.",
+  },
+  {
+    question: "How do I register for the game jam?",
+    answer:
+      "There is no pre-registration required. To participate, simply visit <a class='text-blue-500' href='/submit'>submit</a> when you are ready and follow the instructions.",
+  },
+  {
+    question: "Are there any prizes for the winners?",
+    answer:
+      "Yes, there will be prizes for the top entries in each challenge category. The details of the prizes will be announced at the start of the game jam.",
+  },
+  {
+    question: "Can I use existing code/assets in my game?",
+    answer:
+      "You are allowed to use existing code or assets as long as they are properly credited and do not violate any copyright or licensing agreements.",
+  },
+  {
+    question: "What happens if I can't finish my game by the deadline?",
+    answer:
+      "While we encourage participants to complete their games within the given timeframe, we understand that challenges may arise. If you can't finish on time, you can still submit your work in progress, and you'll receive feedback and insights from the community.",
+  },
+  {
+    question: "Is there a specific format for game submissions?",
+    answer:
+      "No, how you make your game is up to you. As long as the judges can follow a set of instructions to test the game. Just make sure it's pre-compiled/built.",
+  },
+  {
+    question: "How do I stay updated and connected with other participants?",
+    answer:
+      "Join our official communication channel on <a class='text-blue-500' href='https://discord.highcost.tech'>Discord</a> to stay updated and connect with fellow participants. Regular announcements and updates will also be posted there.",
+  },
+  {
+    question: "How do i give feedback to the submited games?",
+    answer:
+      "Either by joining our discord or if they are using e.g. Github you could create a discussion or a issue on that platform.",
+  },
+];
+---
+
+<script>
+  const buttons = document.querySelectorAll(".button-faq");
+  buttons.forEach((button) => {
+    button.addEventListener("click", function (this: HTMLButtonElement) {
+      const svgElements = this.querySelectorAll(".button-faq svg");
+      svgElements.forEach((svg: Element) => svg.classList.toggle("hidden"));
+      const ddElement = document.getElementById(`dd-${this.id}`);
+      ddElement?.classList.toggle("hidden");
+    });
+  });
+</script>
+
+<div class="bg-gray-900">
+  <div class="mx-auto max-w-7xl pt-24 p-12">
+    <div class="mx-auto max-w-4xl divide-y divide-white/10">
+      <div>
+        <h2 class="text-2xl font-bold leading-10 tracking-tight text-white">
+          Frequently asked questions
+        </h2>
+        <p class="mt-6 max-w-2xl text-base leading-7 text-gray-300">
+          Have a different question and can't find the answer you're looking
+          for? Reach out to our support team by joining our <a
+            href="https://discord.highcost.tech"
+            class="font-semibold text-indigo-400 hover:text-indigo-300"
+            >discord</a
+          >
+        </p>
+      </div>
+      <dl class="mt-10 space-y-6 divide-y divide-white/10">
+        {
+          faqs.map((data, index) => (
+            <div class="pt-6">
+              <dt>
+                <button
+                  type="button"
+                  class="button-faq flex w-full items-start justify-between text-left text-white"
+                  aria-controls="faq-0"
+                  aria-expanded="false"
+                  id={`faq-${index}`}
+                >
+                  <span class="text-base font-semibold leading-7">
+                    {data.question}
+                  </span>
+                  <span class="ml-6 flex h-7 items-center">
+                    <svg
+                      class="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6v12m6-6H6"
+                      />
+                    </svg>
+                    <svg
+                      class="h-6 w-6 hidden"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M18 12H6"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12 hidden" id={`dd-faq-${index}`}>
+                <p
+                  class="text-base leading-7 text-gray-300"
+                  set:html={data.answer}
+                />
+              </dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </div>
+</div>
