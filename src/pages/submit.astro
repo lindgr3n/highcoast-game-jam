@@ -1,5 +1,52 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+
+const errors = {
+  teamName: "",
+  teamSize: "",
+  email: "",
+  link: "",
+  challange: "",
+  message: "",
+};
+
+if (Astro.request.method === "POST") {
+  try {
+    const data = await Astro.request.formData();
+    const teamName = data.get("team-name");
+    const teamSize = data.get("team-size");
+    const email = data.get("email");
+    const link = data.get("link");
+    const challange = data.get("challange");
+    const message = data.get("message");
+
+    if (typeof teamName !== "string" || teamName.length < 1) {
+      errors.teamName += "Please enter a teamname. ";
+    }
+    if (typeof teamSize !== "number" || teamSize < 1 || teamSize > 5) {
+      errors.teamSize += "Team size must be between 1-5. ";
+    }
+    if (typeof email !== "string" || email.length < 1) {
+      errors.email += "Please enter a email. ";
+    }
+    if (typeof link !== "string" || link.length < 1) {
+      errors.link += "Please enter a link. ";
+    }
+    if (typeof challange !== "string" || challange.length < 1) {
+      errors.challange += "Please select a challange. ";
+    }
+
+    const hasErrors = Object.values(errors).some((msg) => msg);
+    if (!hasErrors) {
+      // Populate database
+      return Astro.redirect("/contributions");
+    }
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
 ---
 
 <MainLayout>
@@ -120,7 +167,7 @@ import MainLayout from "../layouts/MainLayout.astro";
           </div>
         </div>
       </div>
-      <form action="#" method="POST" class="px-6 lg:px-8 pt-48">
+      <form method="POST" class="px-6 lg:px-8 pt-12 sm:pt-48">
         <div class="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
           <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
             <div>
@@ -134,9 +181,13 @@ import MainLayout from "../layouts/MainLayout.astro";
                   type="text"
                   name="team-name"
                   id="team-name"
-                  required
                   class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
                 />
+                {
+                  errors.teamName && (
+                    <p class="text-sm text-red-600 pl-2">{errors.teamName}</p>
+                  )
+                }
               </div>
             </div>
             <div>
@@ -155,6 +206,11 @@ import MainLayout from "../layouts/MainLayout.astro";
                   required
                   class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
                 />
+                {
+                  errors.teamSize && (
+                    <p class="text-sm text-red-600 pl-2">{errors.teamSize}</p>
+                  )
+                }
               </div>
             </div>
             <div class="sm:col-span-2">
@@ -190,6 +246,11 @@ import MainLayout from "../layouts/MainLayout.astro";
                     placeholder="you@example.com"
                   />
                 </div>
+                {
+                  errors.email && (
+                    <p class="text-sm text-red-600 pl-2">{errors.email}</p>
+                  )
+                }
               </div>
             </div>
             <div class="sm:col-span-2">
@@ -206,12 +267,17 @@ import MainLayout from "../layouts/MainLayout.astro";
                   >
                   <input
                     type="text"
-                    name="company-website"
-                    id="company-website"
+                    name="link"
+                    id="link"
                     class="block w-full rounded-r-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
                     placeholder="www.example.com"
                   />
                 </div>
+                {
+                  errors.link && (
+                    <p class="text-sm text-red-600 pl-2">{errors.link}</p>
+                  )
+                }
               </div>
             </div>
             <fieldset class="sm:col-span-2">
@@ -219,49 +285,56 @@ import MainLayout from "../layouts/MainLayout.astro";
                 >Challange</legend
               >
               <p class="mt-1 text-sm leading-6 text-gray-400">
-                Select the challange you want to participate in. Every entry is
-                automaticly entered in best game.
+                Select the challange you want to participate in. Find more about
+                the challanges <a class="text-yellow-600" href="/#challanges"
+                  >here</a
+                >.
               </p>
               <div class="mt-6 space-y-6">
                 <div class="flex items-center gap-x-3">
                   <input
-                    id="push-everything"
-                    name="push-notifications"
+                    id="concept-crusaders"
+                    name="challange"
                     type="radio"
                     class="h-4 w-4 border-gray-300 text-yellow-600 focus:ring-yellow-600"
                   />
                   <label
-                    for="push-everything"
+                    for="concept-crusaders"
                     class="block text-sm font-medium leading-6 text-white"
                     >Concept Crusaders</label
                   >
                 </div>
                 <div class="flex items-center gap-x-3">
                   <input
-                    id="push-email"
-                    name="push-notifications"
+                    id="innovation-innovators"
+                    name="challange"
                     type="radio"
                     class="h-4 w-4 border-gray-300 text-yellow-600 focus:ring-yellow-600"
                   />
                   <label
-                    for="push-email"
+                    for="innovation-innovators"
                     class="block text-sm font-medium leading-6 text-white"
                     >Innovation Innovators</label
                   >
                 </div>
                 <div class="flex items-center gap-x-3">
                   <input
-                    id="push-nothing"
-                    name="push-notifications"
+                    id="games-for-good"
+                    name="challange"
                     type="radio"
                     class="h-4 w-4 border-gray-300 text-yellow-600 focus:ring-yellow-600"
                   />
                   <label
-                    for="push-nothing"
+                    for="games-for-good"
                     class="block text-sm font-medium leading-6 text-white"
                     >Games for Good</label
                   >
                 </div>
+                {
+                  errors.challange && (
+                    <p class="text-sm text-red-600 pl-2">{errors.challange}</p>
+                  )
+                }
               </div>
             </fieldset>
             <div class="sm:col-span-2">
