@@ -2,4 +2,293 @@
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<MainLayout>Here is submit</MainLayout>
+<MainLayout>
+  <div class="relative isolate bg-gray-900">
+    <div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
+      <div class="relative px-6 pt-24 sm:pt-32 lg:static lg:px-8 lg:pt-48">
+        <div class="lg:pr-8 lg:pt-4">
+          <div class="lg:max-w-lg">
+            <h2 class="text-base font-semibold leading-7 text-yellow-600">
+              Are you ready?
+            </h2>
+            <p
+              class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl"
+            >
+              Submit your work
+            </p>
+            <p class="mt-6 text-lg leading-8 text-gray-300">
+              Are you ready to submit your work? Make sure you read the
+              checklist below
+            </p>
+            <dl
+              class="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-300 lg:max-w-none"
+            >
+              <div class="relative pl-9">
+                <dt class="inline font-semibold text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="absolute left-1 top-1 h-5 w-5 text-green-600"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"
+                    ></path>
+                  </svg>
+                   Team and team size:
+                </dt>
+                <dd class="inline">
+                  Enter your teamname and size of your team. Compete as solo or
+                  a team of max 5.
+                </dd>
+              </div>
+              <div class="relative pl-9">
+                <dt class="inline font-semibold text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="absolute left-1 top-1 h-5 w-5 text-green-600"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"
+                    ></path>
+                  </svg>
+                   Project link:
+                </dt>
+                <dd class="inline">
+                  Provide a link to your code containing a easy way to test your
+                  game.
+                </dd>
+              </div>
+              <div class="relative pl-9">
+                <dt class="inline font-semibold text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="absolute left-1 top-1 h-5 w-5 text-green-600"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"
+                    ></path>
+                  </svg>
+                   Challange:
+                </dt>
+                <dd class="inline">
+                  Select the challange you want to compete in. All entries is
+                  automaticlly competing in the "Best game" challange.
+                </dd>
+              </div>
+              <div class="relative pl-9">
+                <dt class="inline font-semibold text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="absolute left-1 top-1 h-5 w-5 text-green-600"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"
+                    ></path>
+                  </svg>
+                   Message:
+                </dt>
+                <dd class="inline">
+                  Got any questions or other information feel free to enter them
+                  here. Fastest way for any feedback or questions is to join our
+                  discord.
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <form action="#" method="POST" class="px-6 lg:px-8 pt-48">
+        <div class="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
+          <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+            <div>
+              <label
+                for="team-name"
+                class="block text-sm font-semibold leading-6 text-white"
+                >Team name</label
+              >
+              <div class="mt-2.5">
+                <input
+                  type="text"
+                  name="team-name"
+                  id="team-name"
+                  required
+                  class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+            <div>
+              <label
+                for="team-size"
+                class="block text-sm font-semibold leading-6 text-white"
+                >Team size</label
+              >
+              <div class="mt-2.5">
+                <input
+                  type="number"
+                  max="5"
+                  min="1"
+                  name="team-size"
+                  id="team-size"
+                  required
+                  class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+            <div class="sm:col-span-2">
+              <label
+                for="email"
+                class="block text-sm font-semibold leading-6 text-white"
+                >Email</label
+              >
+              <div class="mt-2.5">
+                <div class="relative mt-2 rounded-md shadow-sm">
+                  <div
+                    class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
+                  >
+                    <svg
+                      class="h-5 w-5 text-gray-400"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"
+                      ></path>
+                      <path
+                        d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    class="block w-full rounded-md border-0 bg-white/5 px-3.5 pl-10 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                    placeholder="you@example.com"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="sm:col-span-2">
+              <label
+                for="link"
+                class="block text-sm font-semibold leading-6 text-white"
+                >Link to project</label
+              >
+              <div class="mt-2.5">
+                <div class="mt-2 flex rounded-md shadow-sm">
+                  <span
+                    class="inline-flex items-center rounded-l-md border-r-0 bg-white/5 px-3.5 py-2 text-gray-400 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm"
+                    >https://</span
+                  >
+                  <input
+                    type="text"
+                    name="company-website"
+                    id="company-website"
+                    class="block w-full rounded-r-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                    placeholder="www.example.com"
+                  />
+                </div>
+              </div>
+            </div>
+            <fieldset class="sm:col-span-2">
+              <legend class="text-sm font-semibold leading-6 text-white"
+                >Challange</legend
+              >
+              <p class="mt-1 text-sm leading-6 text-gray-400">
+                Select the challange you want to participate in. Every entry is
+                automaticly entered in best game.
+              </p>
+              <div class="mt-6 space-y-6">
+                <div class="flex items-center gap-x-3">
+                  <input
+                    id="push-everything"
+                    name="push-notifications"
+                    type="radio"
+                    class="h-4 w-4 border-gray-300 text-yellow-600 focus:ring-yellow-600"
+                  />
+                  <label
+                    for="push-everything"
+                    class="block text-sm font-medium leading-6 text-white"
+                    >Concept Crusaders</label
+                  >
+                </div>
+                <div class="flex items-center gap-x-3">
+                  <input
+                    id="push-email"
+                    name="push-notifications"
+                    type="radio"
+                    class="h-4 w-4 border-gray-300 text-yellow-600 focus:ring-yellow-600"
+                  />
+                  <label
+                    for="push-email"
+                    class="block text-sm font-medium leading-6 text-white"
+                    >Innovation Innovators</label
+                  >
+                </div>
+                <div class="flex items-center gap-x-3">
+                  <input
+                    id="push-nothing"
+                    name="push-notifications"
+                    type="radio"
+                    class="h-4 w-4 border-gray-300 text-yellow-600 focus:ring-yellow-600"
+                  />
+                  <label
+                    for="push-nothing"
+                    class="block text-sm font-medium leading-6 text-white"
+                    >Games for Good</label
+                  >
+                </div>
+              </div>
+            </fieldset>
+            <div class="sm:col-span-2">
+              <label
+                for="message"
+                class="block text-sm font-semibold leading-6 text-white"
+                >Message</label
+              >
+              <div class="mt-2.5">
+                <textarea
+                  name="message"
+                  id="message"
+                  rows="4"
+                  class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 flex justify-end">
+          <button
+            type="submit"
+            class="rounded-md bg-blue-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+            >Send message</button
+          >
+        </div>
+      </form>
+    </div>
+  </div>
+</MainLayout>
