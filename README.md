@@ -1,54 +1,60 @@
-# Astro Starter Kit: Basics
+# High Coast Game Jam
 
-```sh
-npm create astro@latest -- --template basics
+Welcome to the High Coast Game Jam!
+
+## Description
+
+The High Coast Game Jam is a community-driven event where game developers come together to create and showcase innovative, exciting games. This event aims to celebrate creativity, collaboration, and the spirit of game development.
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Development](#development)
+- [License](#license)
+
+## Installation
+
+To participate in the High Coast Game Jam, please follow these steps:
+
+1. Visit [Itch.io](https://itch.io) and create an account if you don't have one.
+2. Join the [High Coast Game Jam](https://itch.io/jam/high-coast-game-jam) on Itch.io.
+3. Get ready to start your creative journey!
+
+## Usage
+
+Joining the High Coast Game Jam is easy:
+
+1. Visit the game jam's page on Itch.io.
+2. Explore the game submissions.
+3. Cast your votes and provide feedback to support your favorite projects.
+
+## Contributing
+
+If you'd like to contribute to the High Coast Game Jam, you can do so by making code changes, by participating, voting, and providing feedback to fellow game developers. Your active involvement is key to making this event a success!
+
+## Development
+
+If you're interested in contributing to the development of the application used for the High Coast Game Jam, follow these steps:
+
+1. **Fork the Repository:** Start by forking this repository to your GitHub account. This will create a copy of the project under your account.
+2. **Clone Your Fork:** Clone your forked repository to your local machine using Git:
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+git clone [your-fork-repository-url]
 ```
+3. **Install Dependencies:** Navigate to the project directory and install the required dependencies.
+```
+npm install
+```
+4. **Run the Application:** Launch the application in development mode.
+```
+npm run dev
+```
+5. **Make Changes:** Make your desired changes to the application.
+6. **Testing:** Test your changes and ensure that they work as expected.
+7. **Contributing:** If you'd like to contribute your changes, create a pull request to the main branch for review.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## License
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+The High Coast Game Jam site is distributed under the MIT license.
