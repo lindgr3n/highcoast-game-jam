@@ -21,7 +21,7 @@ import LogoCloud from "../components/LogoCloud.astro";
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
       <div class="hidden sm:mb-8 sm:flex sm:justify-center"></div>
-      <div class="text-center">
+      <div class="text-center flex flex-col relative">
         <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">
           <span class="pr-3 text-red-500">High</span><span class="pr-3"
             >Coast</span
@@ -29,7 +29,14 @@ import LogoCloud from "../components/LogoCloud.astro";
           <span class="pr-4 text-green-500 rotate-4">Game</span>
           <span class="text-yellow-400">Jam</span>
         </h1>
-        <p class="mt-6 text-lg leading-8 text-gray-300">
+        <div
+          class="pt-4 lg:absolute lg:top-[-5.0em] lg:right-[-70px] lg:transform lg:rotate-12"
+        >
+          <span class="text-4xl sm:text-6xl font-bold text-yellow-400"
+            >4-10/12</span
+          >
+        </div>
+        <p class="mt-4 sm:mt-6 text-lg leading-8 text-gray-300">
           Unleash your creativity, forge epic adventures, and level up your game
           development skills in our electrifying Game Jam!
         </p>
