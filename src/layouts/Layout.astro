@@ -14,11 +14,39 @@ const fathomSideId = import.meta.env.PROD
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="description" content="Astro description" />
+    <meta
+      name="description"
+      content="Join us for a week of creative game development and innovation in the High Coast region. Discover incredible projects and be part of the gaming community at High Coast Game Jam!"
+    />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.highcoastgamejam.se/" />
+    <meta property="og:title" content="High Coast Game Jam" />
+    <meta
+      property="og:description"
+      content="Join us for a week of creative game development and innovation in the High Coast region. Discover incredible projects and be part of the gaming community at High Coast Game Jam!"
+    />
+    <meta
+      property="og:image"
+      content="https://www.highcoastgamejam.se/images/hero.avif"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.highcoastgamejam.se/" />
+    <meta property="twitter:title" content="High Coast Game Jam" />
+    <meta
+      property="twitter:description"
+      content="Join us for a week of creative game development and innovation in the High Coast region. Discover incredible projects and be part of the gaming community at High Coast Game Jam!"
+    />
+    <meta
+      property="twitter:image"
+      content="https://www.highcoastgamejam.se/images/hero.avif"
+    />
     <script
       src="https://cdn.usefathom.com/script.js"
       data-site={fathomSideId}
