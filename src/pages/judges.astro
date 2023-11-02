@@ -45,13 +45,13 @@ const judges = [
 ---
 
 <MainLayout title="High Coast Game Jam - About">
-  <div class="p-16 h-full">
+  <div class="sm:p-16 h-full">
     <div class="py-24 md:py-32 text-white">
       <div
         class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-5"
       >
         <div class="max-w-2xl xl:col-span-2">
-          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">
             About the judges
           </h2>
           <p class="mt-6 text-lg leading-8">
@@ -65,7 +65,7 @@ const judges = [
         <ul role="list" class="-mt-12 space-y-12 xl:col-span-3">
           {
             judges.map((judge) => (
-              <li class="flex flex-col gap-10 p-12 rounded sm:flex-row ">
+              <li class="flex flex-col gap-10 p-2 md:p-12 md:flex-row ">
                 <img
                   class="aspect-[4/5] w-52 flex-none rounded-2xl object-cover"
                   src={judge.image}
