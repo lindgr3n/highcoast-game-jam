@@ -1,5 +1,7 @@
 ---
 import Logo from "./Logo.astro";
+const { pathname } = Astro.url;
+
 const menuData = [
   {
     title: "Submit on Itch.io",
@@ -58,6 +60,14 @@ const menuData = [
       </button>
     </div>
     <div class="hidden lg:flex lg:gap-x-12">
+      {
+        pathname != "/" && (
+          <a href="/" class="text-sm font-semibold leading-6 text-white">
+            {" "}
+            Start
+          </a>
+        )
+      }
       {
         menuData.map((menuItem) => (
           <a
