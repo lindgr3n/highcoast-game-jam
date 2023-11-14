@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import MainLayout from "../layouts/MainLayout.astro";
 
 import gameController from "../images/gamecontroller.jpg";
@@ -71,8 +71,9 @@ import gameController from "../images/gamecontroller.jpg";
 
   <!-- Image section -->
   <div class="md:mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8">
-    <Image
+    <Picture
       src={gameController}
+      widths={[300, 1000, 2000]}
       alt="https://unsplash.com/photos/person-holding-game-controller-in-front-of-television-0woyPEJQ7jc"
       class="aspect-[9/4] w-full object-cover xl:rounded-3xl"
     />
