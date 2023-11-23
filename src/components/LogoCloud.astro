@@ -2,27 +2,32 @@
 interface Sponsor {
   name: string;
   src: ImageMetadata;
+  class?: string;
 }
 import { Image } from "astro:assets";
 import xlentLogo from "../images/logo/xlent.svg";
-const sponsors: Sponsor[] = [{ name: "XLENT", src: xlentLogo }];
+import aeLogo from "../images/logo/atomicelbow.png";
+const sponsors: Sponsor[] = [
+  { name: "XLENT", src: xlentLogo, class: "max-h-6" },
+  { name: "Atomic Elbow", src: aeLogo, class: "max-h-12" },
+];
 ---
 
-<div>
+<div class="w-full">
   <h2 class="text-center text-sm font-semibold leading-8 text-white">
     Sponsors
   </h2>
   <div
-    class="mx-auto grid max-w-lg grid-cols-4 items-center justify-center gap-x-8 gap-y-10 sm:max-w-xl sm:gap-x-10 lg:mx-0 lg:max-w-none pt-4"
+    class="flex flex-col w-full sm:flex-row items-center justify-center gap-x-8 gap-y-10 sm:gap-x-10 pt-4"
   >
     {
       sponsors.map((sponsor) => (
         <Image
-          class="col-span-4 max-h-6 w-full object-contain lg:col-span-4"
+          class={`object-contain ${sponsor.class}`}
           src={sponsor.src}
           alt={sponsor.name}
-          width={158}
-          height={48}
+          width={256}
+          height={64}
         />
       ))
     }
