@@ -1,0 +1,73 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import RememberMarloweImage from "../images/winners/remember_marlowe.png";
+import MysticalForestImage from "../images/winners/themysticalforest.jpg";
+import GhostHenHuntImage from "../images/winners/ghosthenhunt.png";
+import WinnerCard from "../components/WinnerCard.astro";
+
+const rememberMarlowe = {
+  name: "Remember Marlowe",
+  description: "",
+  href: "https://tallestdwarf.itch.io/remember-marlowe",
+  img: RememberMarloweImage,
+};
+
+const mysticalForest = {
+  name: "The Mystical Forest",
+  description: "",
+  href: "https://mireheart.itch.io/the-mystical-forest",
+  img: MysticalForestImage,
+};
+const ghostHenHunt = {
+  name: "Ghost-Hen-Hunt",
+  description: "",
+  href: "https://gameguyi.itch.io/ghost-hen-hunt",
+  img: GhostHenHuntImage,
+};
+---
+
+<MainLayout title="High Coast Game Jam - About">
+  <div class="py-24 sm:py-32 lg:py-40 p-12">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 rounded-lg">
+      <div class="mx-auto max-w-3xl lg:mx-0 pt-12">
+        <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          Winners of the 2023 High Coast Game Jam
+        </h2>
+        <p class="mt-6 text-lg leading-8 text-gray-400">
+          We proudly present the winners of the High Coast Game Jam 2023. Over 7
+          days, they dedicated their best efforts to create exceptional games,
+          showcasing their talent and dedication to the world of game
+          development. <br /><br />Thanks for participating in this years game
+          jam 💯
+        </p>
+      </div>
+      <div class="flex flex-col gap-8 py-24 md:py-12">
+        <WinnerCard
+          title="Winner Best Game"
+          description="The top-rated game in the High Coast Game Jam 2023, chosen by the voters. It achieved the #1 position in Gameplay, Accessibility, and Theme categories, demonstrating its excellence in this year's event."
+          item={rememberMarlowe}
+        />
+        <WinnerCard
+          title="Winner Harmonious Melodies"
+          description="Winner of the Judge's Choice 2023 - Harmonious Melodies. This game's music perfectly captured the desired atmosphere, enhancing the overall gaming experience."
+          item={mysticalForest}
+        />
+        <WinnerCard
+          title="Winner Visually Stunning"
+          description="Winner of the Judge's Choice 2023 - Visually Stunning. A remarkable work that appeared to have taken more than just one week to create. Exceptional attention to detail and a captivating sense of immersion, truly bringing the forest to life."
+          item={mysticalForest}
+        />
+        <WinnerCard
+          title="Winner Games for Good"
+          description="Winner of the Judge's Choice 2023 - Games for Good. This game's impactful approach to raising awareness about Dementia through thoughtful implementation sets an inspiring example."
+          item={rememberMarlowe}
+        />
+        <WinnerCard
+          title="Winner Judge's choice"
+          description="Winner of the Judge's Choice 2023 - This game impressed the judges with a well-rounded performance in gameplay, audio, and story. While it may have some rough edges, it's a promising start."
+          item={ghostHenHunt}
+        />
+      </div>
+    </div>
+  </div>
+</MainLayout>
