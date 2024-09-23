@@ -1,5 +1,14 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import CountdownTimer from "../components/CountdownTimer.astro";
+
+let dest = new Date("dec 2, 2024 07:00:00").getTime();
+let now = new Date().getTime();
+let diff = dest - now;
+
+let themeActive = diff <= 0;
+let themeTitle = "";
+let themeDescription = "";
 ---
 
 <MainLayout title="High Coast Game Jam - Theme">
@@ -13,12 +22,45 @@ import MainLayout from "../layouts/MainLayout.astro";
     >
     </div>
   </div>
+  {
+    themeActive ? (
+      <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+        <div class="mb-8 flex justify-center">
+          <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-300">
+            Unlock your creativity with 2024 year's theme.
+          </div>
+        </div>
+        <div class="text-center">
+          <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl uppercase">
+            {themeTitle}
+          </h1>
+          <p class="mt-6 text-lg leading-8 text-gray-300 flex flex-col gap-4">
+            <>
+              <span>{themeDescription}</span>
+              <span>Happy jamming! 🚀🎮</span>
+            </>
+          </p>
+        </div>
+      </div>
+    ) : (
+      <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+        <div class="mb-8 flex justify-center">
+          <div class="relative rounded-full px-3 py-1 text-lg leading-6 text-gray-300">
+            Time until <b>2024</b> year's theme is revealed.
+          </div>
+        </div>
+        <div class="text-center">
+          <CountdownTimer />
+        </div>
+      </div>
+    )
+  }
   <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-    <div class="mb-8 flex justify-center">
+    <div class="mb-8 flex flex-col items-center justify-center">
       <div
         class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-300"
       >
-        Unlock your creativity with 2023 year's theme.
+        2023 year's theme.
       </div>
     </div>
     <div class="text-center">
