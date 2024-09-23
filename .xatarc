@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://lindgr3n-lhrlkl.eu-central-1.xata.sh/db/highcoast-gamejam",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}
