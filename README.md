@@ -19,7 +19,7 @@ The High Coast Game Jam is a community-driven event where game developers come t
 To participate in the High Coast Game Jam, please follow these steps:
 
 1. Visit [Itch.io](https://itch.io) and create an account if you don't have one.
-2. Join the [High Coast Game Jam](https://itch.io/jam/high-coast-game-jam) on Itch.io.
+2. Join the [High Coast Game Jam](https://itch.io/jam/high-coast-game-jam-2024) on Itch.io.
 3. Get ready to start your creative journey!
 
 ## Usage
