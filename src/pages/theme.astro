@@ -1,14 +1,34 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import CountdownTimer from "../components/CountdownTimer.astro";
+import { xataClient } from "../xataClient";
 
-let dest = new Date("dec 2, 2024 07:00:00").getTime();
+// TODO: Should read the target value from the database
+const target = "2024-12-02 07:00:00";
+let dest = new Date(target).getTime();
 let now = new Date().getTime();
 let diff = dest - now;
 
-let themeActive = diff <= 0;
+let themeActive = false;
 let themeTitle = "";
 let themeDescription = "";
+
+if (diff <= 0) {
+  await fetchTheme();
+  themeActive = true;
+}
+
+async function fetchTheme() {
+  // TODO: fix ts compiler error with db property not found
+  const data = await xataClient.db.themes
+    .filter({
+      year: "2024",
+    })
+    .getFirst();
+
+  themeTitle = data.name;
+  themeDescription = data.description;
+}
 ---
 
 <MainLayout title="High Coast Game Jam - Theme">
@@ -50,7 +70,7 @@ let themeDescription = "";
           </div>
         </div>
         <div class="text-center">
-          <CountdownTimer />
+          <CountdownTimer target={target} />
         </div>
       </div>
     )
