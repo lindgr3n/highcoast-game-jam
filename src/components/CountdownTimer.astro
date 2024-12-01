@@ -1,67 +1,70 @@
 ---
-
+// TODO: How can we pass in the target value
 ---
 
 <script>
   // https://pagedone.io/docs/countdown
-  let dest = new Date("dec 2, 2024 07:00:00").getTime();
-  let x = setInterval(function () {
-    let now = new Date().getTime();
-    let diff = dest - now;
+  const target = "2024-12-02 07:00:00";
+  let dest = new Date(target).getTime();
+  let now = new Date().getTime();
+  let diff = dest - now;
+  // Only start time if the countdown is positive
+  if (diff > 0) {
+    let x = setInterval(function () {
+      now = new Date().getTime();
+      diff = dest - now;
 
-    // Check if the countdown has reached zero or negative
-    if (diff === 0) {
-      clearInterval(x); // Stop the countdown
-      location.reload;
-      return; // Exit the function
-    } else if (diff < 0) {
-      clearInterval(x); // Stop the countdown
-      return; // Exit the function
-    }
-
-    let days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    let seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-    if (days < 10) {
-      days = `0${days}`;
-    }
-    if (hours < 10) {
-      hours = `0${hours}`;
-    }
-    if (minutes < 10) {
-      minutes = `0${minutes}`;
-    }
-    if (seconds < 10) {
-      seconds = `0${seconds}`;
-    }
-
-    // Get elements by class name
-    let countdownElements =
-      document.getElementsByClassName("countdown-element");
-
-    // Loop through the elements and update their content
-    for (let i = 0; i < countdownElements.length; i++) {
-      let className = countdownElements[i].classList[1]; // Get the second class name
-      switch (className) {
-        case "days":
-          countdownElements[i].innerHTML = days;
-          break;
-        case "hours":
-          countdownElements[i].innerHTML = hours;
-          break;
-        case "minutes":
-          countdownElements[i].innerHTML = minutes;
-          break;
-        case "seconds":
-          countdownElements[i].innerHTML = seconds;
-          break;
-        default:
-          break;
+      // Check if the countdown has reached zero or negative
+      if (diff <= 0) {
+        clearInterval(x); // Stop the countdown
+        location.reload();
+        return; // Exit the function
       }
-    }
-  }, 1000);
+
+      let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      if (days < 10) {
+        days = `0${days}`;
+      }
+      if (hours < 10) {
+        hours = `0${hours}`;
+      }
+      if (minutes < 10) {
+        minutes = `0${minutes}`;
+      }
+      if (seconds < 10) {
+        seconds = `0${seconds}`;
+      }
+
+      // Get elements by class name
+      let countdownElements =
+        document.getElementsByClassName("countdown-element");
+
+      // Loop through the elements and update their content
+      for (let i = 0; i < countdownElements.length; i++) {
+        let className = countdownElements[i].classList[1]; // Get the second class name
+        switch (className) {
+          case "days":
+            countdownElements[i].innerHTML = days;
+            break;
+          case "hours":
+            countdownElements[i].innerHTML = hours;
+            break;
+          case "minutes":
+            countdownElements[i].innerHTML = minutes;
+            break;
+          case "seconds":
+            countdownElements[i].innerHTML = seconds;
+            break;
+          default:
+            break;
+        }
+      }
+    }, 1000);
+  }
 </script>
 
 <div
