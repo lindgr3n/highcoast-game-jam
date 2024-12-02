@@ -9,26 +9,26 @@ let dest = new Date(target).getTime();
 let now = new Date().getTime();
 let diff = dest - now;
 
-let themeActive = false;
+let themeActive = true;
 let themeTitle = "";
 let themeDescription = "";
 
-if (diff <= 0) {
-  await fetchTheme();
-  themeActive = true;
-}
+// if (diff <= 0) {
+//   await fetchTheme();
+//   themeActive = true;
+// }
+fetchTheme();
 
 async function fetchTheme() {
   // TODO: fix ts compiler error with db property not found
-  const data = await xataClient.db.themes
-    .filter({
-      year: "2024",
-    })
-    .getFirst();
-
-  themeTitle = data.name;
-  themeDescription = data.description;
+  // const data = await xataClient.db.themes
+  //   .filter({
+  //     year: "2024",
+  //   })
+  //   .getFirst();
 }
+themeTitle = "It takes two";
+themeDescription = `This year’s theme celebrates collaboration and connection. Whether it's a game about teamwork, dual mechanics, or the interplay between two contrasting elements, "It Takes Two" challenges you to explore how two parts can come together to create something extraordinary.`;
 ---
 
 <MainLayout title="High Coast Game Jam - Theme">
