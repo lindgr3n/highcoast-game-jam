@@ -3,6 +3,8 @@ import MainLayout from "../layouts/MainLayout.astro";
 import RememberMarloweImage from "../images/winners/remember_marlowe.png";
 import MysticalForestImage from "../images/winners/themysticalforest.jpg";
 import GhostHenHuntImage from "../images/winners/ghosthenhunt.png";
+import TwoScrappyRectanglesImage from "../images/winners/twoscrappyrectangles.png";
+import LoveLinkImg from "../images/winners/lovelink.png";
 import WinnerCard from "../components/WinnerCard.astro";
 
 const rememberMarlowe = {
@@ -24,6 +26,20 @@ const ghostHenHunt = {
   href: "https://gameguyi.itch.io/ghost-hen-hunt",
   img: GhostHenHuntImage,
 };
+
+const twoScrappyRectangles = {
+  name: "Two Scrappy Rectangles",
+  description: "",
+  href: "https://xoner.itch.io/two-scapy-rectangles",
+  img: TwoScrappyRectanglesImage,
+};
+
+const loveLink = {
+  name: "Love Link",
+  description: "",
+  href: "https://thinker227.itch.io/love-link",
+  img: LoveLinkImg,
+};
 ---
 
 <MainLayout title="High Coast Game Jam - About">
@@ -31,10 +47,10 @@ const ghostHenHunt = {
     <div class="mx-auto max-w-7xl px-6 lg:px-8 rounded-lg">
       <div class="mx-auto max-w-3xl lg:mx-0 pt-12">
         <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-          Winners of the 2023 High Coast Game Jam
+          Winners of the 2024 High Coast Game Jam
         </h2>
         <p class="mt-6 text-lg leading-8 text-gray-400">
-          We proudly present the winners of the High Coast Game Jam 2023. Over 7
+          We proudly present the winners of the High Coast Game Jam 2024. Over 7
           days, they dedicated their best efforts to create exceptional games,
           showcasing their talent and dedication to the world of game
           development. <br /><br />Thanks for participating in this years game
@@ -42,6 +58,19 @@ const ghostHenHunt = {
         </p>
       </div>
       <div class="flex flex-col gap-8 py-24 md:py-12">
+        <WinnerCard
+          title="Winner Best Game"
+          description="The top-rated game in the High Coast Game Jam 2024, voted by the judges. With a compelling soundtrack and a creative interpretation of the theme, this game impressed with its originality and polish."
+          item={twoScrappyRectangles}
+        />
+        <WinnerCard
+          title="Winner Judge's choice"
+          description="Winner of the Judge's Choice 2024 - With interesting gameplay and good execution, this game showcased the potential and creativity of a solo developer."
+          item={loveLink}
+        />
+      </div>
+      <div class="flex flex-col gap-8 py-24 md:py-12">
+        <span class="text-lg text-white">Winners 2023</span>
         <WinnerCard
           title="Winner Best Game"
           description="The top-rated game in the High Coast Game Jam 2023, chosen by the voters. It achieved the #1 position in Gameplay, Accessibility, and Theme categories, demonstrating its excellence in this year's event."
